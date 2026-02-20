@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root {
+	--colors-neutral-0: #fff;
+	--colors-neutral-100: #f6f8ff;
+	--colors-neutral-300: #697c9a;
+	--colors-blue-500: #0079ff;
+	--colors-neutral-500: #4b6a9b;
+	--colors-neutral-700: #2b3442;
+	--colors-neutral-800: #1e2a47;
+	--colors-neutral-900: #141d2f;
+	--colors-blue-300: #60abff;
+	--colors-neutral-200: #90a4d4;
+	--colors-red-500: #f74646;
+    --font-family: "Inter", sans-serif;
+    --second-family: "Space Mono", sans-serif;
+    --third-family: "Public Sans", sans-serif;
+}
+
+[data-theme="light"] {
+  --color-bg: var(--colors-neutral-100);
+  --color-fg: #141d2f;
+  --color-f: var(--colors-neutral-0);
+  --color-sh: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+
+}
+
+[data-theme="dark"] {
+  --color-bg: #141d2f;
+  --color-fg: #ffffff;
+  --color-f: var(--colors-neutral-800);
+}
+
+
+.container {
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+body {
+    transition: background-color 0.3s ease;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+}
+
+body.dark-theme {
+    background-color: var(--colors-neutral-900);
+    color: var(--colors-neutral-0);
+}
+
+.hero {
+	margin-top: 130px;
+	margin-bottom: 200px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.hero__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero__title {
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 100%;
+}
+
+#themeToggle {
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 140%;
+	letter-spacing: 0.19em;
+	text-align: right;	display: flex;
+	align-items: center;
+	gap: 16px;
+    flex-direction: row-reverse;
+}
+
+.hero-search {
+	background: var(--color-f);
+	box-shadow: var(--color-sh);
+	border-radius: 16px;
+	padding: 8px 12px 8px 24px;
+	width: 730px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.hero-search::before {
+	content: "";
+	position: absolute;
+	top: 20px;
+	left: 23px;
+	width: 24px;
+	height: 24px;
+	background-image: url('/search.png');
+}
+
+.hero-search__input {
+	font-family: var(--second-family);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 140%;
+	color: var(--colors-neutral-0);
+	padding-left: 44px;
+	flex-grow: 1;
+}
+
+.hero-search__button {
+	font-family: var(--second-family);
+    border-radius: 10px;
+    padding: 12px 24px;
+    width: 107px;
+    height: 48px;
+    background: var(--colors-blue-300);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--colors-neutral-0);
+}
+
+.hero__footer {
+	background: var(--color-f);
+	box-shadow: var(--color-sh);
+	border-radius: 16px;
+	padding: 48px 53px 48px 48px;
+}
+
+.hero__footer-profile {
+    display: flex;
+    gap: 32px;
+}
+
+.hero__footer-info {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.hero__footer-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__footer-name {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    color: var(--colors-neutral-700);
+}
+
+.hero__footer-username {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--colors-blue-500);
+}
+
+.hero__footer-date {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: right;
+    color: var(--colors-neutral-500);
+}
+
+.hero__footer-text {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: var(--colors-neutral-500);
+    opacity: 0.75;
+}

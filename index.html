@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='dark'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devfinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <section class="hero container">
+            <div class="hero__top">
+                <span class="hero__title">devfinder</span>
+                <button id="themeToggle" data-theme-toggle aria-label="Change theme"> LIGHT
+                </button>
+            </div>
+            <div class="hero__body">
+                <div class="hero-search">
+                    <input class="hero-search__input" placeholder="Search GitHub username…">
+                    <button class="hero-search__button">Search</button>
+                </div>
+            </div>
+            <div class="hero__footer">
+                <div class="hero__footer-profile">
+                    <img class="hero__footer-avatar" src="/profile.png" alt="User avatar">
+                    <div class="hero__footer-info">
+                        <div class="hero__footer-user">
+                            <span class="hero__footer-name">The Octocat</span>
+                            <span class="hero__footer-username">@octocat</span>
+                        </div>
+                        <span class="hero__footer-date">Joined 25 Jan 2011</span>
+                    </div>
+                    <p class="hero__footer-text">This profile has no bio</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="/script.js"></script>
+
+</html>
