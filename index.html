@@ -24,12 +24,22 @@
             <div class="hero__body">
                 <div class="hero-search">
                     <input class="hero-search__input" placeholder="Search GitHub username…">
+                    <span class="hero-search__error">No results</span>
                     <button class="hero-search__button">Search</button>
                 </div>
             </div>
             <div class="hero__footer">
                 <div class="hero__footer-profile">
-                    <img class="hero__footer-avatar" src="/profile.png" alt="User avatar">
+                    <div class="hero__footer-avatar">
+                        <img class="" src="/profile.png" alt="User avatar">
+                        <div class="hero__footer-info hero__footer-info__mobile">
+                            <div class="hero__footer-user">
+                                <span class="hero__footer-name">The Octocat</span>
+                                <span class="hero__footer-username">@octocat</span>
+                            </div>
+                            <span class="hero__footer-date">Joined 25 Jan 2011</span>
+                        </div>
+                    </div>
                     <div class="hero__footer-info-column">
                         <div class="hero__footer-info">
                             <div class="hero__footer-user">
@@ -87,12 +97,33 @@
                                 </svg> @github</a>
                         </div>
                     </div>
-
                 </div>
+            </div>
+            <div class="hero__error">
+                <span class="hero__error-title">No results found!</span>
+                <p class="hero__error-text">We couldn’t find any GitHub users matching your search. Please double-check the username and try again.</p>
             </div>
         </section>
     </main>
 </body>
 <script src="/script.js"></script>
+<script>
+const inputField = document.querySelector('.hero-search__input');
+const blockToHide = document.querySelector('.hero__footer');
+const inputError = document.querySelector(".hero-search__error");
+const blockError = document.querySelector(".hero__error");
 
+inputField.addEventListener('input', function() {
+    if (this.value.length > 0) {
+        blockToHide.style.display = 'none'; 
+        inputError.style.display = 'flex';
+        blockError.style.display = 'flex';
+    } else {
+        blockToHide.style.display = 'flex'; 
+        inputError.style.display = 'none';
+        blockError.style.display = 'none';
+    }
+});
+
+</script>
 </html>
